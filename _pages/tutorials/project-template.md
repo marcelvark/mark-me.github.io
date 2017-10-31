@@ -65,7 +65,7 @@ source("~/R Scripts/project.r")
 open_project("Test project", "~/R Scripts") # Creates standard variables and functions 
 ```
 
-The _open_project()_ call will not create file file this time, but just open it. Now you can start by creating your project within this file.
+The _open_project()_ call will not create file this time, but just open it. Now you can start by creating your project within this file.
 
 ## Reading and writing data
 

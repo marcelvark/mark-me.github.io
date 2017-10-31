@@ -132,7 +132,7 @@ When you want to recode data in such a way that you'd wind up using a lot of _if
 ELSE <- TRUE # I use this ELSE variable as a placeholder for the TRUE statement. Why not write a TRUE instead? I'm a nerd....
 mtcars %>% 
   mutate(carb_new = case_when(.$carb == 1 ~ "one",
-                              .$carb == 2 ~ "two",
+                              .$carb >= 2 & .$carb <= 3 ~ "two - three",
                               .$carb == 4 ~ "four",
                               ELSE ~ "other" ))
 ```
@@ -141,7 +141,7 @@ mtcars %>%
 
 There are three ways of binning data:
 
-1) Equal observations in bins by using the [**Hmisc**](https://www.rdocumentation.org/packages/Hmisc) package. In the example below the iris's are binnen in groups of 3 observations by Sepal.Length
+1) Equal observations in bins by using the [**Hmisc**](https://www.rdocumentation.org/packages/Hmisc) package. In the example below the iris's are binned in 3 groups of an equal number of observations by Sepal.Length.
 ```r
 iris %>% mutate(Sepal.Length_bin = cut2(Sepal.Length, g=3))
 ```
